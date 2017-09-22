@@ -13,7 +13,7 @@ jobs:
           command: ./build-lib-dist.sh
       - run:
           name: publish to npm
-          command: cd dist && npm publish --access public
+          command: ./publish-to-npm.sh
       - run:
           name: merge branch to master
           command: ./merge-to-master.sh
