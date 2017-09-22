@@ -4,6 +4,7 @@ set -o pipefail
 
 # Build lib/ from src/
 pushd yarn
+yarn install
 yarn run build
 popd
 
