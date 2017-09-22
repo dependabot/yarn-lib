@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run:
+          name: fetch yarn repo
+          command: ./fetch-yarn.sh
+      - run:
+          name: build library distribution
+          command: ./build-lib-dist.sh
+      - run:
+          name: publish to npm
+          command: cd dist && npm publish --access public
+      - run:
+          name: merge branch to master
+          command: ./merge-to-master.sh
