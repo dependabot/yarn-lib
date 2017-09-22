@@ -14,6 +14,7 @@ jobs:
       - run:
           name: publish to npm
           command: ./publish-to-npm.sh
+      - add_ssh_keys
       - run:
           name: merge branch to master
           command: ./merge-to-master.sh
