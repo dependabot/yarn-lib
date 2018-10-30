@@ -2,6 +2,6 @@
 # yarn lockfile v1
 
 
-yarn@1.10.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.10.1.tgz#b792ba28f050ae94cd7e719dbca80639d70da76f"
+yarn@1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.12.1.tgz#afa478c9234ee55e8f4cdcfb994acfa54b69c95b"
