@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches:
+      - 'dependabot/*/yarn-*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Use node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: fetch yarn repo
+        run: ./fetch-yarn.sh
+
+      - name: build library distribution
+        run: ./build-lib-dist.sh
+
+      - name: publish to npm
+        run: ./publish-to-npm.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: merge branch to master
+        run: ./merge-to-master.sh
