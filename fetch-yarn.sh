@@ -2,7 +2,7 @@
 set -eu
 set -o pipefail
 
-branch="$(git branch --show-current)"
+branch="$(git symbolic-ref --short HEAD)"
 echo $branch
 if [[ "$branch" != dependabot/*/yarn-* ]]; then
   echo "not a dependabot yarn pull request"
