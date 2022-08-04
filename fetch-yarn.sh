@@ -2,9 +2,9 @@
 set -eu
 set -o pipefail
 
-branch="$(git rev-parse --abbrev-ref HEAD)"
+branch=$1
 echo $branch
-if [[ "$branch" != dependabot/*/yarn-* ]]; then
+if [[ "$branch" != ref/head/dependabot/*/yarn-* ]]; then
   echo "not a dependabot yarn pull request"
   exit 1
 fi
