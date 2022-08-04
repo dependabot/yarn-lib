@@ -18,7 +18,7 @@ jobs:
           node-version: "12.x"
 
       - name: fetch yarn repo
-        run: ./fetch-yarn.sh ${github.ref}
+        run: ./fetch-yarn.sh
 
       - name: build library distribution
         run: ./build-lib-dist.sh
