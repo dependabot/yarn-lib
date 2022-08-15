@@ -49,6 +49,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.SECRET_TOKEN }}
 
       - name: Use node.js 12.x
         uses: actions/setup-node@v1
