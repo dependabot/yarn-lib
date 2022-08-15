@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-          token: ${{ secrets.SECRET_TOKEN }}
+          token: ${{ secrets.SECRET_PAT }}
 
       - name: Use node.js 12.x
         uses: actions/setup-node@v1
@@ -74,4 +74,4 @@ jobs:
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_PAT }}
