@@ -30,10 +30,10 @@ jobs:
       - name: build library distribution
         run: ./build-lib-dist.sh
 
-#       - name: publish to npm
-#         run: ./publish-to-npm.sh
-#         env:
-#           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: publish to npm
+        run: ./publish-to-npm.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Enable the automerge using a PAT so the merge commits trigger workflows
       - name: Auto-merge
