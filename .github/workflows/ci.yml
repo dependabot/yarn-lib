@@ -21,7 +21,7 @@
 #           node-version: "12.x"
 
 #       - name: fetch yarn repo
-#         run: ./fetch-yarn.sh
+#         run: bash -x fetch-yarn.sh
 
 #       - name: build library distribution
 #         run: ./build-lib-dist.sh
@@ -60,6 +60,8 @@ jobs:
 
       - name: fetch yarn repo
         run: ./fetch-yarn.sh
+        env:
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
 
       - name: build library distribution
         run: ./build-lib-dist.sh

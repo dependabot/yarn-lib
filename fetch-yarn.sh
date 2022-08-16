@@ -2,6 +2,9 @@
 set -eu
 set -o pipefail
 
+branch1=${PR_HEAD}
+echo "branch !!!!!!! ${branch1}"
+
 branch=${GITHUB_REF#refs/heads/}
 echo $branch
 if [[ "$branch" != dependabot/*/yarn-* ]]; then
