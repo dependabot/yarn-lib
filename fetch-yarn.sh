@@ -2,11 +2,8 @@
 set -eu
 set -o pipefail
 
-branch1=${PR_HEAD}
-echo "branch !!!!!!! ${branch1}"
-
-branch=${GITHUB_REF#refs/heads/}
-echo $branch
+branch=${PR_HEAD}
+echo "Branch name is: $branch"
 if [[ "$branch" != dependabot/*/yarn-* ]]; then
   echo "not a dependabot yarn pull request"
   exit 1
