@@ -1,5 +1,9 @@
 # Yarn Lib
 
+## WARNING
+Do not use this in your own projects. This repo is only needed for Dependabot to support Yarn v1... it's not needed for Yarn v2/v3. Wherever possible we prefer to use public APIs such as the `yarn` CLI rather than hacks like this. So whenever we drop support for Yarn v1, this will go away. 
+
+## What is it?
 As of v1.0, Yarn is distributed as a single bundled .js file, which means it
 can no longer be used as a library.
 
